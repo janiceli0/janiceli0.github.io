@@ -1,6 +1,6 @@
 /*===============
-  global styles
-===============*/
+    global styles
+  ===============*/
 
 * {
   padding: 0;
@@ -99,8 +99,8 @@ button {
 }
 
 /*===================
-    buttons and links
-  ===================*/
+      buttons and links
+    ===================*/
 
 .link {
   color: var(--clr-primary);
@@ -204,8 +204,8 @@ button {
 }
 
 /*========
-    layout
-  ========*/
+      layout
+    ========*/
 
 .center {
   display: flex;
@@ -253,6 +253,7 @@ main {
 .about {
   flex-direction: column;
   margin-top: 3em;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .about__name {
@@ -295,6 +296,7 @@ main {
   text-align: center;
   box-shadow: var(--shadow);
   transition: transform 0.2s linear;
+  animation: slideInFromLeft 0.5s ease-out;
 }
 
 .project:hover {
@@ -343,6 +345,16 @@ main {
 
 .skills__list-item {
   margin: 0.5em;
+  animation: fadeInUp 0.5s ease-out;
+  animation-fill-mode: both;
+}
+
+.skills__list-item:nth-child(odd) {
+  animation-delay: 0.2s;
+}
+
+.skills__list-item:nth-child(even) {
+  animation-delay: 0.4s;
 }
 
 .contact {
@@ -418,5 +430,28 @@ main {
 
   .scroll-container {
     display: none;
+  }
+}
+
+/* Add this new section for animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
